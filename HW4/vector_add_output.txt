@@ -1,0 +1,3 @@
+result is correct
+Time for the kernel: 0.045824
+Start Time = 0x1d45060 Stop Time = 0x1d45140
