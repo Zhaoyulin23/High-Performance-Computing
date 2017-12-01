@@ -1,0 +1,54 @@
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 98024: <tancheng-hw2> in cluster <mghpcc_cluster1> Done
+
+Job <tancheng-hw2> was submitted from host <compute-0-000> by user <zhuang.t> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <10*compute-0-006>, in queue <ht-10g>, as user <zhuang.t> in cluster <mghpcc_cluster1>.
+</home/zhuang.t> was used as the home directory.
+</home/zhuang.t/HW2> was used as the working directory.
+Started at Tue Jan 28 18:46:54 2014
+Results reported at Tue Jan 28 18:46:54 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J tancheng-hw2
+#BSUB -o output_file_reduc
+#BSUB -e error_file_reduc
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhuang.t/HW2/
+work=/home/zhuang.t/HW2
+
+cd $work
+export OMP_NUM_THREADS=20
+bin/hw2_mpreduc
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               0.24 sec.
+    Max Memory :             4 MB
+    Average Memory :         4.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+50000005000000
+Time: 0.00659214
+
+
+PS:
+
+Read file <error_file_reduc> for stderr output of this job.
+

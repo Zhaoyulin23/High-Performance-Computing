@@ -1,0 +1,54 @@
+Sender: LSF System <lsfadmin@compute-0-005>
+Subject: Job 98045: <yulin-hw2> in cluster <mghpcc_cluster1> Done
+
+Job <yulin-hw2> was submitted from host <compute-0-000> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <10*compute-0-005>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW2> was used as the working directory.
+Started at Tue Jan 28 19:17:01 2014
+Results reported at Tue Jan 28 19:17:01 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J yulin-hw2
+#BSUB -o output_file_mp32
+#BSUB -e error_file_mp32
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW2/
+work=/home/zhao.y/HW2
+
+cd $work
+export OMP_NUM_THREADS=32
+bin/hw2_mp
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               0.86 sec.
+    Max Memory :             8 MB
+    Average Memory :         8.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+50000005000000
+Time: 0.0275707
+
+
+PS:
+
+Read file <error_file_mp32> for stderr output of this job.
+
