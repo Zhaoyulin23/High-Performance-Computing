@@ -1,0 +1,564 @@
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 100550: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-004> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <20*compute-0-006>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Tue Feb  4 19:53:04 2014
+Results reported at Tue Feb  4 19:53:05 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 20
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 20 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               4.23 sec.
+    Max Memory :             7 MB
+    Average Memory :         7.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.46 -- ranks 0 - 19
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+Processor 0 partial sum: 125250
+Processor 6 partial sum: 1625250
+Processor 1 partial sum: 375250
+Processor 3 partial sum: 875250
+Processor 11 partial sum: 2875250
+Processor 12 partial sum: 3125250
+Processor 4 partial sum: 1125250
+Processor 2 partial sum: 625250
+Processor 7 partial sum: 1875250
+Processor 13 partial sum: 3375250
+Processor 18 partial sum: 4625250
+Processor 10 partial sum: 2625250
+Processor 8 partial sum: 2125250
+Processor 15 partial sum: 3875250
+Processor 19 partial sum: 4875250
+Processor 14 partial sum: 3625250
+Processor 9 partial sum: 2375250
+Processor 5 partial sum: 1375250
+Processor 17 partial sum: 4375250
+Processor 16 partial sum: 4125250
+Result from all processors:50005000
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 100552: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-004> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <10*compute-0-006>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Tue Feb  4 19:54:15 2014
+Results reported at Tue Feb  4 19:54:15 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 10 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               1.23 sec.
+    Max Memory :             7 MB
+    Average Memory :         7.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.46 -- ranks 0 - 9
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+Processor 0 partial sum: 500500
+Processor 5 partial sum: 5500500
+Processor 4 partial sum: 4500500
+Processor 6 partial sum: 6500500
+Processor 9 partial sum: 9500500
+Processor 2 partial sum: 2500500
+Processor 8 partial sum: 8500500
+Processor 1 partial sum: 1500500
+Processor 7 partial sum: 7500500
+Processor 3 partial sum: 3500500
+Result from all processors:50005000
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 100553: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-004> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <5*compute-0-006>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Tue Feb  4 19:55:31 2014
+Results reported at Tue Feb  4 19:55:31 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 5
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 5 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               0.64 sec.
+    Max Memory :             7 MB
+    Average Memory :         7.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.46 -- ranks 0 - 4
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+Processor 0 partial sum: 2001000
+Processor 1 partial sum: 6001000
+Processor 2 partial sum: 10001000
+Processor 3 partial sum: 14001000
+Processor 4 partial sum: 18001000
+Result from all processors:50005000
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@compute-0-004>
+Subject: Job 100556: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-004> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <2*compute-0-004>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Tue Feb  4 19:56:53 2014
+Results reported at Tue Feb  4 19:56:54 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 2
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 2 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               0.35 sec.
+    Max Memory :             4 MB
+    Average Memory :         4.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               36 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.44 -- ranks 0 - 1
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+Processor 0 partial sum: 12502500
+Processor 1 partial sum: 37502500
+Result from all processors:50005000
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@compute-0-004>
+Subject: Job 102260: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-006> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <10*compute-0-004>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Fri Feb  7 00:18:19 2014
+Results reported at Fri Feb  7 00:18:19 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 10 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               0.90 sec.
+    Max Memory :             4 MB
+    Average Memory :         4.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.44 -- ranks 0 - 9
+
+ host | 0
+======|======
+    0 : SHM
+
+ Prot -  All Intra-node communication is: SHM
+
+Processor 0 partial sum: 5050
+Processor 2 partial sum: 25050
+Processor 8 partial sum: 85050
+Processor 5 partial sum: 55050
+Processor 1 partial sum: 15050
+Processor 9 partial sum: 95050
+Processor 6 partial sum: 65050
+Processor 7 partial sum: 75050
+Processor 3 partial sum: 35050
+Processor 4 partial sum: 45050
+Result from all processors:500500
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 102265: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-006> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <4*compute-0-006>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+                            <6*compute-0-004>
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Fri Feb  7 00:24:45 2014
+Results reported at Fri Feb  7 00:24:46 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 10 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               1.34 sec.
+    Max Memory :             8 MB
+    Average Memory :         8.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.46 -- ranks 0 - 3
+Host 1 -- ip 10.100.8.44 -- ranks 4 - 9
+
+ host | 0    1
+======|===========
+    0 : SHM  TCP
+    1 : TCP  SHM
+
+ Prot -  All Intra-node communication is: SHM
+ Prot -  All Inter-node communication is: TCP
+
+Processor 0 partial sum: 55
+Processor 3 partial sum: 355
+Processor 2 partial sum: 255
+Processor 1 partial sum: 155
+Processor 5 partial sum: 555
+Processor 4 partial sum: 455
+Processor 8 partial sum: 855
+Processor 7 partial sum: 755
+Processor 9 partial sum: 955
+Processor 6 partial sum: 655
+Result from all processors:5050
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@compute-0-006>
+Subject: Job 102271: <Yulin-sum> in cluster <mghpcc_cluster1> Done
+
+Job <Yulin-sum> was submitted from host <compute-0-006> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <4*compute-0-006>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+                            <6*compute-0-004>
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW3> was used as the working directory.
+Started at Fri Feb  7 00:26:12 2014
+Results reported at Fri Feb  7 00:26:14 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J Yulin-sum
+#BSUB -o sum_output_file
+#BSUB -e sum_error_file
+#BSUB -n 10
+#BSUB -q ht-10g
+#BSUB cwd /home/zhao.y/HW3
+work=/home/zhao.y/HW3
+cd $work
+tempfile1=hostlistrun
+tempfile2=hostlist-tcp
+
+echo $LSB_MCPU_HOSTS > $tempfile1
+declare -a hosts
+read -a hosts < ${tempfile1}
+for ((i=0; i<${#hosts[@]}; i+=2));
+  do
+    HOST = ${hosts[$i]}
+    CORE= ${hosts[(($i+1))]}
+    echo $HOST:$CORE >> $tempfile2
+done
+
+mpirun -np 10 -prot -TCP -lsf ./bin/sum_mpi_broadcast
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               1.50 sec.
+    Max Memory :             4 MB
+    Average Memory :         4.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between total requested memory and actual max usage.)
+    Max Swap :               37 MB
+
+    Max Processes :          1
+    Max Threads :            1
+
+The output (if any) follows:
+
+Host 0 -- ip 10.100.8.46 -- ranks 0 - 3
+Host 1 -- ip 10.100.8.44 -- ranks 4 - 9
+
+ host | 0    1
+======|===========
+    0 : SHM  TCP
+    1 : TCP  SHM
+
+ Prot -  All Intra-node communication is: SHM
+ Prot -  All Inter-node communication is: TCP
+
+Processor 0 partial sum: 1
+Processor 3 partial sum: 4
+Processor 2 partial sum: 3
+Processor 1 partial sum: 2
+Processor 7 partial sum: 8
+Processor 9 partial sum: 10
+Processor 6 partial sum: 7
+Processor 8 partial sum: 9
+Processor 5 partial sum: 6
+Processor 4 partial sum: 5
+Result from all processors:55
+
+PS:
+
+Read file <sum_error_file> for stderr output of this job.
+
