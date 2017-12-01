@@ -1,10 +1,10 @@
 Sender: LSF System <lsfadmin@compute-0-004>
-Subject: Job 98059: <tancheng-hw2> in cluster <mghpcc_cluster1> Done
+Subject: Job 98059: <yulin-hw2> in cluster <mghpcc_cluster1> Done
 
-Job <tancheng-hw2> was submitted from host <compute-0-000> by user <zhuang.t> in cluster <mghpcc_cluster1>.
-Job was executed on host(s) <10*compute-0-004>, in queue <ht-10g>, as user <zhuang.t> in cluster <mghpcc_cluster1>.
-</home/zhuang.t> was used as the home directory.
-</home/zhuang.t/HW2> was used as the working directory.
+Job <yulin-hw2> was submitted from host <compute-0-000> by user <zhao.y> in cluster <mghpcc_cluster1>.
+Job was executed on host(s) <10*compute-0-004>, in queue <ht-10g>, as user <zhao.y> in cluster <mghpcc_cluster1>.
+</home/zhao.y> was used as the home directory.
+</home/zhao.y/HW2> was used as the working directory.
 Started at Tue Jan 28 19:21:53 2014
 Results reported at Tue Jan 28 19:21:53 2014
 
@@ -13,13 +13,13 @@ Your job looked like:
 ------------------------------------------------------------
 # LSBATCH: User input
 #!/bin/sh
-#BSUB -J tancheng-hw2
+#BSUB -J yulin-hw2
 #BSUB -o output_file_reduc30
 #BSUB -e error_file_reduc30
 #BSUB -n 10
 #BSUB -q ht-10g
-#BSUB cwd /home/zhuang.t/HW2/
-work=/home/zhuang.t/HW2
+#BSUB cwd /home/zhao.y/HW2/
+work=/home/zhao.y/HW2
 
 cd $work
 export OMP_NUM_THREADS=30
